@@ -10,11 +10,9 @@ const btnGen = document.getElementById("btn-random");
 const card = document.getElementById("div-user-card");
 const load = document.getElementById("div-loading-card");
 
-btnGen.onclick = () => {
-  callApi();
-};
-
 async function callApi() {
+  card.style.display = "none";
+  load.style.display = "";
   const resp = await axios.get("https://randomuser.me/api/");
 
   if (resp.data.results[0].gender == "female") {
@@ -36,5 +34,8 @@ async function callApi() {
     resp.data.results[0].location.postcode +
     " ";
   Comail.innerText = resp.data.results[0].email;
+
+  card.style.display = "";
+  load.style.display = "none";
   console.log(resp, data.results[0]);
 }
