@@ -27,11 +27,11 @@ async function callApi() {
   Coname.innerText =
     resp.data.results[0].name.first + " " + resp.data.results[0].name.last;
   Coadd.innerText =
-    resp.data.results[0].city +
+    resp.data.results[0].location.city +
     " " +
-    resp.data.results[0].state +
+    resp.data.results[0].location.state +
     " " +
-    resp.data.results[0].country +
+    resp.data.results[0].location.country +
     " " +
     resp.data.results[0].location.postcode +
     " ";
